@@ -1,0 +1,5 @@
+---
+# tasks file for /etc/ansible/roles/apache-server
+- import_tasks: install-httpd.yml
+- import_tasks: start-enable-httpd.yml
+- import_tasks: apache-config.yml

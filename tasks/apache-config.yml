@@ -1,0 +1,16 @@
+---
+  - name: setting up apache server
+    template: 
+      src: templates/apache-jinja.j2
+      dest: /var/www/html/index.html
+  - name: Configure Firewall
+    firewalld:
+      service: https
+      state: enabled
+      permanent: true
+      immediate: true
+  - name: reloading firewall
+    service:
+      name: firewalld
+      state: reloaded
+...
